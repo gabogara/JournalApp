@@ -55,7 +55,7 @@ export const LoginPage = () => {
 
             <Grid item sx={{ textAlign: 'right' }}>
               <Link component={RouterLink} color="primary" to="/auth/register">
-                Crear una cuenta
+              Sign up
               </Link>
             </Grid>
           </Grid>

@@ -1,7 +1,5 @@
 import { Grid , Typography } from "@mui/material"
 
-Grid
-
 
 export const AuthLayout = ({children, title= '' }) => {
     return (
