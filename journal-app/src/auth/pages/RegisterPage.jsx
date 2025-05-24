@@ -52,8 +52,8 @@ export const RegisterPage = () => {
             </Grid>
 
             <Grid item sx={{ textAlign: 'right' }}>
-                <Typography> sx={{ mr: 1 }} Do you have an account already?</Typography>
-              <Link component={RouterLink} color="primary" to="/auth/register">
+                <Typography sx={{ mr: 1 }}> Do you have an account already?</Typography>
+              <Link component={RouterLink} color="primary" to="/auth/login">
               Log in
               </Link>
             </Grid>
