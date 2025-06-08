@@ -1,19 +1,39 @@
+import { useDispatch } from 'react-redux';
 import { Link as RouterLink } from 'react-router-dom';
 import { Button, Grid, TextField, Typography, Link } from '@mui/material';
 import { Google } from '@mui/icons-material';
+
+
 import { AuthLayout } from '../layout/AuthLayout';
+
 import { useForm } from '../../hooks';
+import { checkingAuthentication } from '../../store/auth/thunks';
+
 
 export const LoginPage = () => {
 
+const dispatch = useDispatch();
 const { email, password, onInputChange } = useForm({
   email: 'gabo1gara@gmail.com',
   password: '123456'
 });
 
+
+const onSubmit = ( event ) => {
+  event.preventDefault();
+
+  console.log( { email, password } );
+  dispatch( checkingAuthentication() );
+}
+
+const onGoogleSignIn = () => {
+  console.log('onGoogleSignIn');
+
+}
+
   return (
     <AuthLayout title="Login">
-<form onSubmit={(e) => e.preventDefault()}>
+<form onSubmit={ onSubmit }>
           <Grid
             container
             spacing={2}
@@ -61,6 +81,7 @@ const { email, password, onInputChange } = useForm({
                 fullWidth
                 startIcon={<Google />}
                 sx={{ height: 45 }}
+                onClick={ onGoogleSignIn }
               >
                 Google
               </Button>
