@@ -10,3 +10,10 @@ export const checkingAuthentication =  (  email, password  )  => {
     }
 
 }
+
+export const startGoogleSingIn = () => {
+
+    return async ( dispatch ) => {
+        dispatch ( checkingCredentials() );
+    } 
+}

@@ -7,8 +7,7 @@ import { Google } from '@mui/icons-material';
 import { AuthLayout } from '../layout/AuthLayout';
 
 import { useForm } from '../../hooks';
-import { checkingAuthentication } from '../../store/auth/thunks';
-
+import { checkingAuthentication, startGoogleSingIn } from '../../store/auth/thunks';
 
 export const LoginPage = () => {
 
@@ -28,6 +27,7 @@ const onSubmit = ( event ) => {
 
 const onGoogleSignIn = () => {
   console.log('onGoogleSignIn');
+  dispatch( startGoogleSingIn() );
 
 }
 
